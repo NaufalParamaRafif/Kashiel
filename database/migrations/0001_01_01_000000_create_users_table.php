@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('email')->unique();
+            $table->string('nomor_tlp', length:15);
             $table->enum('privilage', ['administrator', 'petugas']);
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');

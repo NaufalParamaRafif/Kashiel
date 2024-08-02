@@ -13,11 +13,15 @@ return new class extends Migration
     {
         Schema::create('penjualans', function (Blueprint $table) {
             $table->id();
+            $table->integer('jumlah_produk');
             $table->decimal('total_harga', total: 10, places: 2);
-            $table->unsignedBigInteger('pelanggan_id');
+            $table->decimal('subtotal', total: 10, places: 2);
+            $table->unsignedBigInteger('produk_id');
+            $table->unsignedBigInteger('pelanggan_id'); 
             $table->date('tanggal_penjualan');
-
+            
             $table->foreign('pelanggan_id')->references('id')->on('pelanggans');
+            $table->foreign('produk_id')->references('id')->on('produks');
             $table->timestamps();
         });
     }
