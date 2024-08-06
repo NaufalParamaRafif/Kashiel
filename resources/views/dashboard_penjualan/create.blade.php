@@ -5,7 +5,7 @@
         <div class="row g-4">
             <div class="col-12">
                 <div class="bg-light rounded h-100 p-4">
-                    <h4 class="mb-4">Detail Penjualan Barang</h4>
+                    <h4 class="mb-4">Masukkan Data Penjualan Barang</h4>
                     <form method="POST" action="{{ route('dashboard_penjualan.store') }}">
                         @csrf
                         <div class="mb-3">
@@ -22,6 +22,15 @@
                             <input type="number" class="form-control @error('pelanggan_id') is-invalid @enderror" id="pelanggan_id" name="pelanggan_id" value="{{ old('pelanggan_id') }}" required @required(true)>
                         </div>
                         @error('pelanggan_id')
+                            <div class="invalid-feedback">
+                                {{ $message }}
+                            </div>
+                        @enderror
+                        <div class="mb-3">
+                            <label for="kasir_id" class="form-label">Kasir ID</label>
+                            <input type="number" class="form-control @error('kasir_id') is-invalid @enderror" id="kasir_id" name="kasir_id" value="{{ old('kasir_id') }}" required @required(true)>
+                        </div>
+                        @error('kasir_id')
                             <div class="invalid-feedback">
                                 {{ $message }}
                             </div>

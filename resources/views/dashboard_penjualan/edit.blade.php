@@ -28,6 +28,15 @@
                             </div>
                         @enderror
                         <div class="mb-3">
+                            <label for="kasir_id" class="form-label">Kasir ID</label>
+                            <input type="number" class="form-control @error('kasir_id') is-invalid @enderror" id="kasir_id" name="kasir_id" value="{{ old('kasir_id') ?? $data['kasir_id'] }}" required @required(true)>
+                        </div>
+                        @error('kasir_id')
+                            <div class="invalid-feedback">
+                                {{ $message }}
+                            </div>
+                        @enderror
+                        <div class="mb-3">
                             <label for="jumlah_produk" class="form-label">Jumlah Produk</label>
                             <input type="number" class="form-control @error('jumlah_produk') is-invalid @enderror" id="jumlah_produk" name="jumlah_produk" value="{{ old('jumlah_produk') ?? $data['jumlah_produk'] }}" required @required(true)>
                         </div>
