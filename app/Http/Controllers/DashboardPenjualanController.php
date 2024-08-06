@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\penjualan;
+use App\Models\Penjualan;
 use Illuminate\Http\Request;
 
 class DashboardPenjualanController extends Controller
@@ -33,23 +33,25 @@ class DashboardPenjualanController extends Controller
         $request->validate([
             'pelanggan_id'      => 'required',
             'produk_id'         => 'required',
+            'kasir_id'          => 'required',
             'jumlah_produk'     => 'required',
             'total_harga'       => 'required',
             'subtotal'          => 'required',
             'tanggal_penjualan' => 'required',
         ]);
-
-
+        
+        
         Penjualan::create([
             'pelanggan_id'      => $request->pelanggan_id,
             'produk_id'         => $request->produk_id,
+            'kasir_id'          => $request->kasir_id,
             'jumlah_produk'     => $request->jumlah_produk,
             'total_harga'       => $request->total_harga,
             'subtotal'          => $request->subtotal,
             'tanggal_penjualan' => $request->tanggal_penjualan,
             'created_at'        => now(),
         ]);
-
+        
         return redirect()->route('dashboard_penjualan.index')->with(['success' => 'Data Penjualan Berhasil Disimpan!']);
     }
 
@@ -68,7 +70,7 @@ class DashboardPenjualanController extends Controller
     {
         return view('dashboard_penjualan.edit', ['data' => Penjualan::findOrFail($id)]);
     }
-
+    
     /**
      * Update the specified resource in storage.
      */
@@ -77,21 +79,24 @@ class DashboardPenjualanController extends Controller
         $request->validate([
             'pelanggan_id'      => 'required|numeric',
             'produk_id'         => 'required|numeric',
+            'kasir_id'          => 'required',
             'jumlah_produk'     => 'required|numeric',
             'total_harga'       => 'required|numeric',
             'subtotal'          => 'required|numeric',
             'tanggal_penjualan' => 'required|date',
         ]);
-
+        
         $penjualan = Penjualan::findOrFail($id);
-
+        
         $penjualan->update([
             'pelanggan_id'      => $request->pelanggan_id,
             'produk_id'         => $request->produk_id,
+            'kasir_id'          => $request->kasir_id,
             'jumlah_produk'     => $request->jumlah_produk,
             'total_harga'       => $request->total_harga,
             'subtotal'          => $request->subtotal,
             'tanggal_penjualan' => $request->tanggal_penjualan,
+            'updated_at'        => now(),
         ]);
 
         return redirect()->route('dashboard_penjualan.index')->with(['success' => 'Data Penjualan Berhasil Diubah!']);

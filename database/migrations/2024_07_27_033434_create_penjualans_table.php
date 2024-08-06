@@ -18,10 +18,12 @@ return new class extends Migration
             $table->decimal('subtotal', total: 10, places: 2);
             $table->unsignedBigInteger('produk_id');
             $table->unsignedBigInteger('pelanggan_id'); 
+            $table->unsignedBigInteger('kasir_id'); 
             $table->date('tanggal_penjualan');
             
             $table->foreign('pelanggan_id')->references('id')->on('pelanggans');
             $table->foreign('produk_id')->references('id')->on('produks');
+            $table->foreign('kasir_id')->references('id')->on('users');
             $table->timestamps();
         });
     }

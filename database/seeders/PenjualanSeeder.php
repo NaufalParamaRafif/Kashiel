@@ -20,6 +20,7 @@ class PenjualanSeeder extends Seeder
                 'subtotal' => 9375,
                 'produk_id' => 1,
                 'pelanggan_id' => 1,
+                'kasir_id' => 1,
                 'tanggal_penjualan' => '2024-07-30'
             ),
             array(
@@ -28,6 +29,7 @@ class PenjualanSeeder extends Seeder
                 'subtotal' => 7000,
                 'produk_id' => 2,
                 'pelanggan_id' => 2,
+                'kasir_id' => 2,
                 'tanggal_penjualan' => '2024-07-29'
             ),
             array(
@@ -36,6 +38,7 @@ class PenjualanSeeder extends Seeder
                 'subtotal' => 7500,
                 'produk_id' => 3,
                 'pelanggan_id' => 3,
+                'kasir_id' => 3,
                 'tanggal_penjualan' => '2024-07-28'
             ),
             array(
@@ -44,6 +47,7 @@ class PenjualanSeeder extends Seeder
                 'subtotal' => 16000,
                 'produk_id' => 5,
                 'pelanggan_id' => 5,
+                'kasir_id' => 4,
                 'tanggal_penjualan' => '2024-07-27'
             ),
             array(
@@ -52,6 +56,7 @@ class PenjualanSeeder extends Seeder
                 'subtotal' => 18000,
                 'produk_id' => 5,
                 'pelanggan_id' => 5,
+                'kasir_id' => 5,
                 'tanggal_penjualan' => '2024-07-26'
             )
         );
@@ -63,6 +68,7 @@ class PenjualanSeeder extends Seeder
                 'subtotal' => $penjualan['subtotal'],
                 'produk_id' => $penjualan['produk_id'],
                 'pelanggan_id' => $penjualan['pelanggan_id'],
+                'kasir_id' => $penjualan['kasir_id'],
                 'tanggal_penjualan' => $penjualan['tanggal_penjualan'],
             ]);
         }
