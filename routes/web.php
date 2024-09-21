@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Produk;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DashboardProdukController;
 use App\Http\Controllers\DashboardCategoryController;
@@ -16,6 +17,16 @@ Route::get('/login', function () {
 
 Route::get('/register', function () {
     return view('register');
+});
+
+Route::get('/kasir', function () {
+    return view('kasir');
+});
+
+Route::get('/kasir_b', function () {
+    return view('kasir_bootstrap', [
+        'produks' => Produk::all(),
+    ]);
 });
 
 Route::resource('/dashboard_penjualan', DashboardPenjualanController::class)->names('dashboard_penjualan');

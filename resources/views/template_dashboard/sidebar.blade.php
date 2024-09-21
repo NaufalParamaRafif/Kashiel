@@ -11,8 +11,8 @@
             </div>
         </div>
         <div class="navbar-nav w-100">
-            <a href="index.html" class="nav-item nav-link active"><i class="fa fa-tachometer-alt me-2"></i>Dashboard</a>
-            <a href="/kasir" class="nav-item nav-link"><i class="fa fa-cash-register me-2"></i>Kasir</a>
+            <a href="index.html" class="nav-item nav-link"><i class="fa fa-tachometer-alt me-2"></i>Dashboard</a>
+            <a href="/kasir_b" class="nav-item nav-link active"><i class="fa fa-cash-register me-2"></i>Kasir</a>
             <a href="/dashboard_penjualan" class="nav-item nav-link"><i class="fa fa-clock me-2"></i>History Penjualan</a>
             <a href="/dashboard_produk" class="nav-item nav-link"><i class="fa fa-box me-2"></i>Produk</a>
             <a href="/dashboard_pelanggan" class="nav-item nav-link"><i class="fa fa-user me-2"></i>Pelanggan</a>
